@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>blog main</title>
+</head>
+<body>
+<h1 th:text="${blog.getTitle()}"></h1>
+<p th:text="${blog.getIntroduction()}"></p>
+<a th:href="@{/home}">
+    <button class="header-button">홈으로 이동</button>
+</a>
+
+</body>
+</html>
