@@ -21,7 +21,7 @@ public class RegisterController {
         return "registerForm";
     }
     @PostMapping
-    public String processRegisterForm(@ModelAttribute("user") User user) {
+    public String processRegisterForm(@ModelAttribute User user) {
         User regiterdUser = userService.saveUser(user);
         System.out.println(regiterdUser);
         return "redirect:/home";

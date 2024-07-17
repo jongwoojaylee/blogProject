@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import org.example.jayvelogcloning.domain.Blog;
 import org.example.jayvelogcloning.domain.Role;
 import org.example.jayvelogcloning.domain.User;
-import org.example.jayvelogcloning.repository.BlogRepository;
 import org.example.jayvelogcloning.repository.RoleRepository;
 import org.example.jayvelogcloning.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -20,7 +19,6 @@ import java.util.Optional;
 @Service
 public class UserService {
     private final UserRepository userRepository;
-    private final BlogRepository blogRepository;
     private final RoleRepository roleRepository;
     private final PasswordEncoder passwordEncoder;
 

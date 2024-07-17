@@ -1,4 +1,4 @@
-package org.example.jwtexam.security;
+package org.example.jayvelogcloning.security;
 
 import lombok.RequiredArgsConstructor;
 import org.example.jayvelogcloning.domain.User;

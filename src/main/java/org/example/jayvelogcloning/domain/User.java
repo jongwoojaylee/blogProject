@@ -45,7 +45,7 @@ public class User {
     @OneToOne(mappedBy = "owner", cascade = CascadeType.ALL)
     private Blog blog;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "writer")
     private List<Comment> comments = new ArrayList<>();
 
     @OneToMany(mappedBy = "user")

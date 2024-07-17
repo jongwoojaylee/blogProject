@@ -3,8 +3,7 @@ package org.example.jayvelogcloning.controller;
 import lombok.RequiredArgsConstructor;
 import org.example.jayvelogcloning.domain.Blog;
 import org.example.jayvelogcloning.domain.User;
-import org.example.jayvelogcloning.repository.BlogRepository;
-import org.example.jayvelogcloning.repository.UserRepository;
+import org.example.jayvelogcloning.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,16 +12,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 @Controller
 public class BlogController {
-    private final BlogRepository blogRepository;
-    private final UserRepository userRepository;
+    private final UserService userService;
 
-    @RequestMapping("/{name}")
-    public String blog(@PathVariable String name, Model model) {
-        if(!name.startsWith("@")){
+
+    @RequestMapping("/{username}")
+    public String blog(@PathVariable String username, Model model) {
+        if(!username.startsWith("@")){
             return "incorrectUser";
         }else {
-            name = name.substring(1);
-            User user = userRepository.findByName(name).orElse(null);
+            username = username.substring(1);
+            User user = userService.findUserByUsername(username);
             if(user == null){
                 return "incorrectUser";
             }
